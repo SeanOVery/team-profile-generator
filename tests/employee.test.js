@@ -3,6 +3,7 @@ const Employee = require('../lib/employee.js')
 describe('Employee tests', () => {
   test('Expect new Employee to have a name, id, and email', () => {
     const person = new Employee('Bob', 12, 'email@email.com')
+    
     expect(person).toHaveProperty('name')
     expect(person).toHaveProperty('id')
     expect(person).toHaveProperty('email')
