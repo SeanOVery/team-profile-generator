@@ -5,6 +5,9 @@ const inquirer = require('inquirer'),
   engineer = require('./lib/engineer'),
   intern = require('./lib/intern')
 
+  let employees = [],
+    employeeCards = []
+
 const addMoreQuestion = [
   {
     type: 'confirm',
@@ -23,13 +26,13 @@ const newEmployeeTypeQuestion = [
   }
 ]
 
-let employees = []
+
 
 const init = () => {
   inquirer
     .prompt(manager.managerQuestions)
     .then(res => {
-      employees.push(res)
+      employees.push(new manager.Manager(res.name, res.id, res.email, res.officeNumber))
       repeat()
     })
   
@@ -42,7 +45,7 @@ const repeat = () => {
       if (res.repeat) {
         newEmployee()
       } else {
-        return console.log(employees)
+        createFile()
       }
     })
 }
@@ -63,7 +66,7 @@ const engineerInquire = () => {
   inquirer
     .prompt(engineer.engineerQuestions)
     .then(res => {
-      employees.push(res)
+      employees.push(new engineer.Engineer(res.name, res.id, res.email, res.github))
       repeat()
     })
 }
@@ -72,13 +75,16 @@ const internInquire = () => {
   inquirer
     .prompt(intern.internQuestions)
     .then(res => {
-      employees.push(res)
+      employees.push(new intern.Intern(res.name, res.id, res.email, res.school))
       repeat()
     })
 }
 
 const createFile = () => {
-  
+  employeeCards = renderHTML.generateCards(employees)
+  fs.writeFile('index.html', renderHTML.generateHTML(employeeCards), (err) =>
+  err ? console.error(err) : console.log('Webpage Created!')
+  );
 }
 
 init()
