@@ -13,7 +13,7 @@ const generateCards = (people) => {
           <li class="list-group-item">Email: <a href="mailto:${el.email}">${el.email}</a></li>
           <li class="list-group-item">Office Number: ${el.officeNumber}</li>
         </ul>
-      </div>`)
+        </div>`)
         break;
       case 'Engineer':
         cardTemplate.push(`<div class="card" style="width: 18rem;">
@@ -26,7 +26,7 @@ const generateCards = (people) => {
           <li class="list-group-item">Email: <a href="mailto:${el.email}">${el.email}</a></li>
           <li class="list-group-item">GitHub:<a href="https://github.com/${el.github}" class="card-link">${el.github}</a></li>
         </ul>
-      </div>`)
+        </div>`)
         break;
       case 'Intern':
         cardTemplate.push(`<div class="card" style="width: 18rem;">
@@ -39,9 +39,7 @@ const generateCards = (people) => {
           <li class="list-group-item">Email: <a href="mailto:${el.email}">${el.email}</a></li>
           <li class="list-group-item">School: ${el.school}</li>
         </ul>
-      </div>`)
-        break;
-      default:
+        </div>`)
         break;
     }
   });
