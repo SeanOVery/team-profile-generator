@@ -26,8 +26,6 @@ const newEmployeeTypeQuestion = [
   }
 ]
 
-
-
 const init = () => {
   inquirer
     .prompt(manager.managerQuestions)
@@ -35,7 +33,6 @@ const init = () => {
       employees.push(new manager.Manager(res.name, res.id, res.email, res.officeNumber))
       repeat()
     })
-  
 }
 
 const repeat = () => {
