@@ -8,7 +8,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
