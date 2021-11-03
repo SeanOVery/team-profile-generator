@@ -21,7 +21,7 @@
   
   in the same directory you installed in run ```node index``` to run the program and answer the prompts which appear in the command line. An HTML file with some basic css will be created in the local directory
 
-  Like to walkthrough video [here](https://streamable.com/ljenbz).
+  Link to walkthrough video [here](https://streamable.com/ljenbz).
 
   ## Contributing
   
